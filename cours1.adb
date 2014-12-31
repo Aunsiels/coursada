@@ -5,7 +5,7 @@ pragma Elaborate_All (Stm32.GPIO);
 
 procedure Cours1 is
 --Definir la Pin
-  Pin : constant Pin_Type := (GPIOE, 4);
+  Pin : constant Pin_Type := (GPIOD, 12);
 begin
 --Configurer la pin comme une pin de sortie
    Setup_Out_Pin(Pin);
