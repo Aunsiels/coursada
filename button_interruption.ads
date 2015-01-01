@@ -5,9 +5,11 @@ package Button_Interruption is
 
     protected type Button_Interface is
         procedure EXTI0_Interrupt_Handler;
+--Link the function and the Handler.
         pragma Attach_Handler(EXTI0_Interrupt_Handler, EXTI0_IRQn);
     end Button_Interface;
 
+--Instanciates a Button_Interface
     Btn : aliased Button_Interface;
 
 end Button_Interruption;
