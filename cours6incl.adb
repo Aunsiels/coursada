@@ -25,7 +25,7 @@ package body Cours6incl is
     pragma Attach_Handler (Timer_Handler, IRQ_Timer(2));
   end Brightness;
 
---Corps dyu protected
+--Corps du protected
 
   protected body Brightness is
 --Definition du handler
@@ -33,7 +33,7 @@ package body Cours6incl is
     begin
 --Toogle Pin et clear interruption
       Toggle_Pin(Pin);
-      Clear_Interrupt(1, Update);
+      Clear_Interrupt(2, Update);
     end Timer_Handler;
 
     procedure main is
