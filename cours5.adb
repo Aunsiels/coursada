@@ -13,7 +13,7 @@ procedure Cours5 is
      Clock_Division => Div_1,
      Repetition_Counter => 0);
 --Declarer une pin et une variable de type Unsigned_32 qui contiendra la valeur du compteur
-     Pin : constant Pin_Type := (GPIOE, 4);
+     Pin : constant Pin_Type := (GPIOD, 12);
      Val : Unsigned_32 := 0;
 begin
 --Configurer Pin et le timer

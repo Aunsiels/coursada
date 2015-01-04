@@ -1,10 +1,11 @@
 with Stm32.Timer; use Stm32.Timer;
+with Ada.Real_Time; use Ada.Real_Time;
 with Stm32.GPIO; use Stm32.GPIO;
 with Stm32.RCC; use Stm32.RCC;
 pragma Elaborate_All (Stm32.GPIO);
+with Interfaces; use Interfaces;
 
-
-procedure Cours7 is
+procedure Example is
 --Declaration des parametres du timer
   Params_Timer : constant Timer_Params :=
     (Prescaler =>0,
@@ -53,6 +54,7 @@ procedure Cours7 is
      Idle_State => Reset,
      N_Idle_State => Reset);
   Pin4 : constant Pin_Type := (GPIOD,15);
+  I : Unsigned_32 := 0;
 begin
 --Initialisation du Timer
   Init_Timer(4,Params_Timer,Disable,0);
@@ -67,6 +69,8 @@ begin
   Setup_Output_Channel(4,4,Params_PWM4);
   Configure_Output_Pin(4,Pin4);
   loop
-    null;
+    Set_Compare(4,1,I);
+    I := (I +1) mod 8400;
+    delay until Clock + To_Time_Span (0.001);
   end loop;
-end Cours7;
+end Example;

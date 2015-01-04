@@ -9,11 +9,11 @@ package body Cours6incl is
   Params : constant Timer_Params :=
     (Prescaler =>40000,
      Counter_Mode => Up,
-     Period => 40000,
+     Period => 500,
      Clock_Division => Div_1,
      Repetition_Counter => 0);
 --Declaration Pin
-     Pin : constant Pin_Type := (GPIOE, 4);
+     Pin : constant Pin_Type := (GPIOD, 12);
 
 --Creation du protected pour y mettre le handler
 
