@@ -5,7 +5,7 @@ with Stm32.RCC; use Stm32.RCC;
 pragma Elaborate_All (Stm32.GPIO);
 with Interfaces; use Interfaces;
 
-procedure Example is
+procedure Cours7 is
 --Declaration des parametres du timer
   Params_Timer : constant Timer_Params :=
     (Prescaler =>0,
@@ -73,4 +73,4 @@ begin
     I := (I +1) mod 8400;
     delay until Clock + To_Time_Span (0.001);
   end loop;
-end Example;
+end Cours7;
